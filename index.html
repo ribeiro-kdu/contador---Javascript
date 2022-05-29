@@ -13,9 +13,21 @@
         <p>Este é o meu primeiro projeto Javascript.</p>
         
         <div id="counter">
-            <button id="down" class="button-format" name="subtrair" onmousedown="decrement()">-</button>
+            <button 
+              id="down" 
+              class="button-format" 
+              name="sub" 
+              onclick="clicked('sub')"
+              onmousedown="action('sub')" 
+              onmouseup="stop()" >-</button>
             <span id="currentNumber">0</span>
-            <button id="up"  class="button-format" name="adicionar" onmousedown="increment()">+</button>
+            <button 
+              id="up"  
+              class="button-format" 
+              name="add" 
+              onclick="clicked('add')"
+              onmousedown="action('add')" 
+              onmouseup="stop()" >+</button>
         </div>
     </div>
     <script src="assets/js/scripts.js"></script>
