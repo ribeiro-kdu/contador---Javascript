@@ -1,4 +1,4 @@
-let currentNumber = document.getElementById('currentNumber')
+let currentNumber = document.getElementById('currentNumber');
 
 // operation é a função que realmente faz as contas, recebe o typeButton como argumento
 // isso evita ficar repetindo código, assim evitar ter uma função para incrementar
@@ -7,9 +7,18 @@ let currentNumber = document.getElementById('currentNumber')
 // o que é chamado de ternário, se o botão é do tipo  'add' então startValue++
 // caso não seja faça startValue--
 function operation(typeButton) {
-  startValue = currentNumber.innerText
-  typeButton === 'add' ? startValue++ : startValue--
-  currentNumber.innerText = startValue
+  startValue = currentNumber.innerText;
+  typeButton === 'add' ? startValue++ : startValue--;
+  currentNumber.innerText = startValue;
+
+//Estiliza condicionalmente o valor apresentado na tela.
+    if (startValue > 0) {
+    currentNumber.style.color = 'lightgreen';
+  } else if (startValue == 0){
+    currentNumber.style.color = 'white';
+  } else {
+    currentNumber.style.color = 'pink';
+  }
 }
 
 // a setInterval é um função do javascript que executa a função interna dela a uma
@@ -22,7 +31,7 @@ function operation(typeButton) {
 function action(typeButton) {
   interval = setInterval(function () {
     operation(typeButton)
-  }, 100)
+  }, 200)
 }
 
 // para (interrompe) a contagem "matando" o setInteval
@@ -36,4 +45,3 @@ function stop() {
 function clicked(typeButton) {
   operation(typeButton)
 }
-
